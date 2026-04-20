@@ -1,0 +1,52 @@
+:root { --brand-blue: #000052; }
+
+body { background-color: #f8f9fa; padding-top: 90px; font-family: 'Segoe UI', sans-serif; }
+
+.navbar-ford {
+    background-color: var(--brand-blue); padding: 15px 30px; width: 100%;
+    position: fixed; top: 0; left: 0; z-index: 1050;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.brand-text {
+    font-weight: 800; color: white; letter-spacing: 2px;
+    border-left: 4px solid white; padding-left: 12px;
+    text-transform: uppercase; margin: 0;
+}
+
+/* botones de bahia con color segun ocupacion */
+.btn-semaforo {
+    height: 90px; border-radius: 12px; border: none; color: white;
+    font-weight: 700; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s; cursor: pointer;
+}
+.btn-semaforo:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); color: white; }
+.oc-verde    { background-color: #28a745; }
+.oc-amarillo { background-color: #ffc107; color: #212529 !important; }
+.oc-amarillo:hover { color: #212529 !important; }
+.oc-rojo     { background-color: #dc3545; }
+.oc-gris     { background-color: #6c757d; }
+
+/* badges de bahia en la tabla */
+.bh-alta         { background-color: #dc3545 !important; color: white; }
+.bh-media        { background-color: #ffc107 !important; color: #212529; }
+.bh-baja         { background-color: #28a745 !important; color: white; }
+.bh-contingencia { background-color: #6c757d !important; color: white; }
+
+.card-tabla { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* pills de estatus */
+.st-pill { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.st-pendiente { background-color: #fff3cd; color: #856404; }
+.st-proceso   { background-color: #cce5ff; color: #004085; }
+.st-terminado { background-color: #d4edda; color: #155724; }
+
+.modal-header-ford { background-color: var(--brand-blue); color: white; }
+.seccion-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6c757d; text-align: center; margin-bottom: 6px; }
+.semaforo-hint { font-size: 0.72rem; opacity: 0.85; margin-top: 4px; }
+
+/* tabla generica */
+.link-cita { color: #0060FF; }
+.select-estatus { width: 125px; }
+.modal-header-tabla { background-color: var(--brand-blue); color: white; }
+.falla-box { font-size: 0.9rem; }

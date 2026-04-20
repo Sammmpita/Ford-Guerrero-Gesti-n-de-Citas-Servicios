@@ -1,0 +1,438 @@
+:root {
+    --ford-blue: #000052;
+    --ford-accent: #1565C0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 88px;
+}
+
+/* barra superior fija */
+.topbar {
+    background-color: var(--ford-blue);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 40px;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1051;
+}
+.topbar-icon { font-size: 0.8rem; }
+
+.topbar-brand {
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+.topbar-address {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.78rem;
+    transition: opacity 0.2s;
+}
+
+.topbar-address:hover {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* navbar principal */
+.navbar-ford {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 58px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+}
+.navbar-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.navbar-logo-img { height: 54px; width: auto; }
+.navbar-icon { font-size: 1rem; }
+
+.ford-logo-text {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    color: #003087;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.ford-logo-text:hover {
+    color: #003087;
+    text-decoration: none;
+}
+
+.ford-logo-svg {
+    height: 36px;
+    width: auto;
+}
+
+/* links del navbar */
+.nav-ford {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+.nav-ford li a {
+    color: var(--ford-blue);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 8px 14px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+/* linea deslizante bajo los links */
+.nav-ford li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2.5px;
+    background-color: var(--ford-blue);
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+}
+
+.nav-ford li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.nav-ford li a.btn-llamanos {
+    color: var(--ford-blue);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-ford li a.btn-llamanos::after {
+    display: none;
+}
+
+.nav-ford li a.btn-llamanos:hover {
+    color: var(--ford-accent);
+}
+
+/* seccion hero con la foto del concesionario */
+.hero-banner {
+    background-size: cover;
+    background-position: center 18%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    padding: 130px 40px 110px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 380px;
+}
+
+/* capa oscura para que se lea el texto */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 82, 0.65) 0%,
+        rgba(0, 0, 82, 0.50) 100%
+    );
+    z-index: 0;
+}
+
+.hero-banner > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4fc3f7;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    line-height: 1.15;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* seccion de tarjetas */
+.servicios-section {
+    padding: 60px 0;
+}
+
+.section-label {
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--ford-blue);
+    margin-bottom: 40px;
+}
+
+.card-servicio {
+    border: none;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    padding: 30px 26px;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-servicio::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--ford-blue);
+    border-radius: 10px 10px 0 0;
+}
+
+.card-servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,82,0.12);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #EBF0FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+    color: var(--ford-blue);
+}
+
+.card-servicio h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.card-servicio p {
+    font-size: 0.86rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* seccion de llamada a la accion */
+.cta-section {
+    background-color: var(--ford-blue);
+    color: white;
+    text-align: center;
+    padding: 55px 40px;
+}
+
+.cta-section h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+}
+
+.btn-cta {
+    background-color: #1565C0;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-cta:hover {
+    background-color: #1976D2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* contenedor del footer */
+.footer-wrapper {
+    background-color: #ffffff;
+    padding: 28px 50px 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-social-label {
+    color: #111;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 14px;
+    font-size: 0.78rem;
+    color: #555;
+}
+
+.footer-logo {
+    height: 38px;
+    width: auto;
+}
+
+/* iconos de redes sociales */
+.social-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.social-icon:hover { opacity: 0.8; }
+.social-icon i { color: white; font-size: 1.2rem; }
+.social-facebook  { background-color: #1877F2; }
+.social-twitter   { background-color: #1DA1F2; }
+.social-youtube   { background-color: #FF0000; }
+.social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+/* modal del mapa de ubicacion */
+.modal-ubicacion-content { border-radius: 12px; overflow: hidden; }
+.modal-ubicacion-header { background-color: #000052; }
+.modal-ubicacion-body { min-height: 420px; }
+.modal-ubicacion-info { background: #fff; border-right: 1px solid #eee; }
+.modal-ubicacion-titulo { color: #000052; }
+.modal-ubicacion-btn {
+    background-color: #000052;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 18px;
+}
+.modal-ubicacion-btn:hover { color: white; opacity: 0.85; }
+.modal-ubicacion-seccion { color: #000052; font-size: 0.85rem; }
+.modal-ubicacion-telefono { color: #888; font-weight: 400; }
+.modal-ubicacion-tabla { font-size: 0.8rem; color: #444; }
+.modal-ubicacion-mapa { min-height: 420px; }
+.modal-ubicacion-iframe { border: 0; min-height: 420px; display: block; }
+
+/* modal de cita exitosa */
+.modal-cita-dialog { max-width: 440px; }
+.modal-cita-content { border-radius: 16px; overflow: hidden; }
+.modal-cita-header {
+    background-color: #000052;
+    padding: 30px 24px 20px;
+    text-align: center;
+}
+.modal-cita-icono {
+    width: 64px; height: 64px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+}
+.modal-cita-icono i { font-size: 2rem; color: white; }
+.modal-cita-titulo { color: white; font-weight: 800; font-size: 1.2rem; margin: 0; }
+.modal-cita-body { padding: 24px 28px; text-align: center; }
+.modal-cita-texto { color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+.modal-cita-btn {
+    background-color: #000052; color: white; border: none;
+    border-radius: 8px; padding: 12px 40px; font-weight: 700;
+    font-size: 0.95rem; cursor: pointer; width: 100%; transition: opacity 0.2s;
+}
+.modal-cita-btn:hover { opacity: 0.85; }
+
+/* footer */
+.footer-ford {
+    background-color: #0a0a0a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.78rem;
+}

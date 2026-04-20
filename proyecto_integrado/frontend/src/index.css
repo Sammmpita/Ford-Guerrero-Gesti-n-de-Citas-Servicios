@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Utilities ──────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.35s ease-out both;
+  }
+
+  /* Skeleton shimmer — reemplaza animate-pulse en este proyecto */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #f3f4f6 25%,
+      #e9eaeb 50%,
+      #f3f4f6 75%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+  }
+}
+
+/* ── Swiper — Hero Carousel overrides ───────────────────────────────────── */
+
+.hero-carousel .swiper-wrapper {
+  align-items: stretch;
+}
+
+.hero-carousel .swiper-slide {
+  height: auto;
+}
+
+.hero-carousel .swiper-button-next,
+.hero-carousel .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.hero-carousel .swiper-button-next:hover,
+.hero-carousel .swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-carousel .swiper-button-next::after,
+.hero-carousel .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.hero-carousel .swiper-pagination {
+  bottom: 16px;
+}
+
+.hero-carousel .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  opacity: 1;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-carousel .swiper-pagination-bullet-active {
+  background: #ffffff;
+  transform: scale(1.3);
+}

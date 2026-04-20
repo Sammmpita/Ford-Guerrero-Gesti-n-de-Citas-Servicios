@@ -1,0 +1,38 @@
+:root { --brand-blue: #000052; }
+
+body { background-color: #f8f9fa; padding-top: 90px; font-family: 'Segoe UI', sans-serif; }
+
+.navbar-ford {
+    background-color: var(--brand-blue); padding: 15px 30px; width: 100%;
+    position: fixed; top: 0; left: 0; z-index: 1050;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.brand-text {
+    font-weight: 800; color: white; letter-spacing: 2px;
+    border-left: 4px solid white; padding-left: 12px;
+    text-transform: uppercase; margin: 0;
+}
+
+/* cabecera del modulo con color segun la bahia */
+.header-modulo {
+    border-radius: 12px; color: white; padding: 20px 30px;
+    margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;
+}
+.hm-alta         { background-color: #dc3545; }
+.hm-medio        { background-color: #ffc107; color: #212529 !important; }
+.hm-largo        { background-color: #28a745; }
+.hm-contingencia { background-color: #6c757d; }
+
+.card-tabla { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* pills de estatus */
+.st-pill { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.st-pendiente { background-color: #fff3cd; color: #856404; }
+.st-proceso   { background-color: #cce5ff; color: #004085; }
+.st-terminado { background-color: #d4edda; color: #155724; }
+.st-cancelado { background-color: #f8d7da; color: #842029; }
+
+.modal-header-ford { background-color: var(--brand-blue); color: white; }
+
+.nav-fecha a { color: var(--brand-blue); font-size: 1.1rem; }
+.fecha-titulo { color: var(--brand-blue); font-size: 1.1rem; font-weight: 700; }

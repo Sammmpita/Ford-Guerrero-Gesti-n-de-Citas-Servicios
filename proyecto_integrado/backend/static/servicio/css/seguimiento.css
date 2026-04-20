@@ -1,0 +1,118 @@
+:root { --ford-blue: #000052; }
+
+body { background-color: #f4f4f4; font-family: 'Segoe UI', Arial, sans-serif; padding-top: 65px; }
+
+/* navbar superior */
+.topbar {
+    background-color: var(--ford-blue); color: rgba(255,255,255,0.75);
+    font-size: 0.75rem; display: flex; align-items: center;
+    justify-content: space-between; padding: 5px 40px; height: 30px;
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1051;
+}
+.topbar-brand { font-weight: 700; color: white; font-size: 0.85rem; padding-left: 20px; }
+
+.navbar-ford {
+    background-color: white; border-bottom: 1px solid #e0e0e0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 58px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: fixed; top: 30px; left: 0; width: 100%; z-index: 1050;
+}
+.nav-ford { display: flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.nav-ford li a {
+    color: var(--ford-blue); text-decoration: none; font-size: 0.88rem;
+    font-weight: 700; padding: 8px 14px; position: relative; display: inline-block;
+}
+.nav-ford li a::after {
+    content: ''; position: absolute; bottom: 1px; left: 50%;
+    transform: translateX(-50%) scaleX(0); width: 80%; height: 2.5px;
+    background-color: var(--ford-blue); border-radius: 2px; transition: transform 0.25s ease;
+}
+.nav-ford li a:hover::after { transform: translateX(-50%) scaleX(1); }
+.nav-ford li a.btn-llamanos { font-weight: 800; display: flex; align-items: center; gap: 6px; }
+.nav-ford li a.btn-llamanos::after { display: none; }
+
+/* titulos de seccion */
+.seccion-titulo {
+    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+    color: #999; font-weight: 700; margin-bottom: 6px;
+}
+.titulo-principal { font-size: 1.5rem; font-weight: 800; color: var(--ford-blue); margin-bottom: 28px; }
+
+/* tarjeta de cita activa */
+.card-cita {
+    background: white; border: none; border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07); overflow: hidden;
+}
+.card-cita-header {
+    background-color: var(--ford-blue); color: white;
+    padding: 16px 22px; display: flex; align-items: center; justify-content: space-between;
+}
+.card-cita-body { padding: 22px; }
+
+/* pills de estatus */
+.pill-estatus {
+    display: inline-block; padding: 5px 14px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.3px;
+}
+.pill-pendiente  { background: #fff3cd; color: #856404; }
+.pill-proceso    { background: #cce5ff; color: #004085; }
+.pill-terminado  { background: #d4edda; color: #155724; }
+.pill-cancelado  { background: #f8d7da; color: #721c24; }
+
+/* barra de progreso de estatus */
+.progreso-estatus { display: flex; align-items: center; margin: 18px 0 8px; }
+.paso { display: flex; flex-direction: column; align-items: center; flex: 1; }
+.paso-circulo {
+    width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid #dee2e6;
+    background: white; display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; color: #aaa; font-weight: 700; transition: all 0.3s;
+}
+.paso-circulo.activo   { background: var(--ford-blue); border-color: var(--ford-blue); color: white; }
+.paso-circulo.completo { background: #28a745; border-color: #28a745; color: white; }
+.paso-circulo.cancelado{ background: #dc3545; border-color: #dc3545; color: white; }
+.paso-label { font-size: 0.7rem; color: #888; margin-top: 5px; text-align: center; font-weight: 600; }
+.paso-label.activo   { color: var(--ford-blue); }
+.paso-label.completo { color: #28a745; }
+.paso-linea { flex: 1; height: 2px; background: #dee2e6; margin: 0 4px; margin-bottom: 22px; }
+.paso-linea.completo { background: #28a745; }
+
+/* tarjetas del historial */
+.card-historial {
+    background: white; border: none; border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 12px;
+    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+}
+
+/* tarjeta del buscador */
+.card-busqueda {
+    background: white; border: none; border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,82,0.1); padding: 40px;
+    max-width: 480px; margin: 60px auto;
+}
+
+@keyframes fadeIn { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+.fade-in { animation: fadeIn 0.35s ease; }
+
+.btn-volver {
+    color: #aaa; font-size: 0.85rem; text-decoration: none;
+    transition: color 0.2s;
+}
+.btn-volver:hover { color: var(--ford-blue); }
+
+.btn-cancelar-modal {
+    border: 1.5px solid #dee2e6; color: #555; background: white;
+    border-radius: 8px; padding: 11px; font-weight: 700;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-cancelar-modal:hover {
+    background: #dc3545; color: white; border-color: #dc3545;
+}
+
+.btn-conservar {
+    border: 1.5px solid #dee2e6; color: #555; background: white;
+    border-radius: 8px; padding: 11px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-conservar:hover {
+    background: var(--ford-blue); color: white; border-color: var(--ford-blue);
+}

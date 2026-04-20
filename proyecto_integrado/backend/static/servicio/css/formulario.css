@@ -1,0 +1,96 @@
+:root {
+    --brand-blue: #000052;
+    --brand-red: #dc3545;
+}
+
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* navbar fijo en la parte superior */
+.navbar-ford {
+    background-color: var(--brand-blue);
+    padding: 15px 30px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.brand-text {
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    padding-left: 0;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.titulo-azul {
+    color: var(--brand-blue) !important;
+    font-weight: 800;
+}
+
+/* tarjeta del formulario */
+.card-estandar {
+    background-color: #ffffff !important;
+    border: none;
+    border-radius: 15px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand-blue) !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 82, 0.1) !important;
+    outline: none;
+}
+
+/* resaltado rojo para campos con error */
+.is-invalid-custom {
+    border: 2px solid var(--brand-red) !important;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.2) !important;
+}
+
+/* botones de enviar y regresar */
+.contenedor-botones { display: flex; flex-direction: column; gap: 15px; }
+
+.btn-confirmar {
+    background-color: var(--brand-blue) !important;
+    color: white !important;
+    border: 2px solid var(--brand-blue) !important;
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-regresar {
+    background-color: transparent !important;
+    border: 2px solid var(--brand-blue) !important;
+    color: var(--brand-blue) !important;
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 14px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-regresar:hover { background-color: var(--brand-blue) !important; color: white !important; }
+
+.contenedor-botones:has(.btn-regresar:hover) .btn-confirmar {
+    background-color: transparent !important;
+    color: var(--brand-blue) !important;
+}
+
+#alertaPropia { display: none !important; border-radius: 15px; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Ford Agencia — Inicio{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-4 fw-bold">Bienvenido a Ford Agencia</h1>
+    <p class="lead text-muted mt-3">
+        Agenda tu cita con un vendedor, explora nuestro catálogo de vehículos
+        y encuentra el auto perfecto para ti.
+    </p>
+    <div class="mt-4">
+        <a href="/autos/" class="btn btn-primary btn-lg me-2">Ver Vehículos</a>
+        <a href="/citas/" class="btn btn-outline-secondary btn-lg">Agendar Cita</a>
+    </div>
+</div>
+
+<div class="row mt-5 g-4">
+    <div class="col-md-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+            <div class="card-body">
+                <div class="display-6 mb-3">🚗</div>
+                <h5 class="card-title">Catálogo de Vehículos</h5>
+                <p class="card-text text-muted">Explora nuestra línea completa de vehículos Ford disponibles.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+            <div class="card-body">
+                <div class="display-6 mb-3">📅</div>
+                <h5 class="card-title">Agenda tu Cita</h5>
+                <p class="card-text text-muted">Reserva una cita con un vendedor en el horario que prefieras.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 text-center border-0 shadow-sm">
+            <div class="card-body">
+                <div class="display-6 mb-3">👤</div>
+                <h5 class="card-title">Vendedores</h5>
+                <p class="card-text text-muted">Conoce a nuestro equipo de asesores de ventas disponibles.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
